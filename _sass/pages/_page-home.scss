@@ -1,0 +1,16 @@
+.page-home {
+
+  .service {
+    padding: 10px;
+  }
+
+  .service-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .service-title {
+      margin-left: 12px;
+    }
+  }
+}

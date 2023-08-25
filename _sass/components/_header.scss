@@ -1,0 +1,27 @@
+.header {
+  color: $primary;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 5px 10px;
+  border-bottom: 1px solid $white-offset;
+  padding: 10px 0px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &.header-absolute {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+  }
+}
+.lock-scroll {
+  .header {
+    &.header-absolute {
+      position: static;
+    }
+  }
+}
