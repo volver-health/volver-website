@@ -39,7 +39,16 @@
           text-decoration: underline;
         }
       }
-    }
+      &.active {
+        > a {
+          font-weight: bold;
+          text-decoration: none;
+          &:hover {
+            text-decoration: none;
+            transition: all 225ms ease-in 0s;
+          }
+        }
+      }    }
     @include media-breakpoint-up(sm) {
       height: inherit;
       display: flex;
