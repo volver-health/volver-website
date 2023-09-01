@@ -18,13 +18,10 @@ footer:
     weight: 3
   - name: "Our Story"
     url: "/our-story/"
-    weight: 6
+    weight: 5
   - name: "Privacy Policy"
     url: "/privacy-policy/"
     weight: 2
-  - name: "Clinical Trial Recruitment"
-    url: "/clinical-trial-recruitment/"
-    weight: 5
   - name: "Rumbo API"
     url: "/rumbo-api/"
     weight: 4
