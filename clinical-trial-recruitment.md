@@ -14,11 +14,11 @@ sitemap: false
         <h2>Do you speak Spanish?</h2>
         <div class="radio-row">
           <div class="radio">
-            <input type="radio" id="spanishYes" name="spanish" value="YES">
+            <input type="radio" id="spanishYes" name="spanish" value="YES" onChange="yesAnswer('smartphone')">
             <label for="yes">Yes</label><br>
           </div>
           <div class="radio">
-            <input type="radio" id="spanishNo" name="spanish" value="NO">
+            <input type="radio" id="spanishNo" name="spanish" value="NO" onChange="noAnswer()">
             <label for="no">No</label><br>
           </div>
         </div>
@@ -27,11 +27,11 @@ sitemap: false
         <h2>Do you have a smartphone?</h2>
         <div class="radio-row">
           <div class="radio">
-            <input type="radio" id="smartphoneYes" name="smartphone" value="YES">
+            <input type="radio" id="smartphoneYes" name="smartphone" value="YES" onChange="yesAnswer('recovery')">
             <label for="yes">Yes</label><br>
           </div>
           <div class="radio">
-            <input type="radio" id="smartphoneNo" name="smartphone" value="NO">
+            <input type="radio" id="smartphoneNo" name="smartphone" value="NO" onChange="noAnswer()">
             <label for="no">No</label><br>
           </div>
         </div>
@@ -40,11 +40,11 @@ sitemap: false
         <h2>Are you or a loved one in recovery for substance use or mental health?</h2>
         <div class="radio-row">
           <div class="radio">
-            <input type="radio" id="recoveryYes" name="recovery" value="YES">
+            <input type="radio" id="recoveryYes" name="recovery" value="YES" onChange="yesAnswer('help')">
             <label for="yes">Yes</label><br>
           </div>
           <div class="radio">
-            <input type="radio" id="recoveryNo" name="recovery" value="NO">
+            <input type="radio" id="recoveryNo" name="recovery" value="NO" onChange="noAnswer()">
             <label for="no">No</label><br>
           </div>
         </div>
@@ -53,34 +53,44 @@ sitemap: false
         <h2>Interested in helping us improve access to behavioral health services?</h2>
         <div class="radio-row">
           <div class="radio">
-            <input type="radio" id="helpYes" name="help" value="YES">
+            <input type="radio" id="helpYes" name="help" value="YES" onChange="yesAnswer('full_form')">
             <label for="yes">Yes</label><br>
           </div>
           <div class="radio">
-            <input type="radio" id="helpNo" name="help" value="NO">
+            <input type="radio" id="helpNo" name="help" value="NO" onChange="noAnswer()">
             <label for="no">No</label><br>
           </div>
         </div>
       </div>
-      <div id="name" style="display:none;">
-        <label for="first">First Name</label>
-        <input type="text" name="name" id="first" placeholder="First name" required="">
+      <div id="full_form" style="display:none;">
+      <div id="name">
+        <label for="first">First Name*</label>
+        <input type="text" name="name" id="first" placeholder="First name" required>
       </div>
-      <div id="phone" style="display:none;">
-        <label for="telephone">Phone Number</label>
-        <input type="telephone" name="telephone" id="telephone" placeholder="(555) 555-5555" required="">
+      <div id="phone">
+        <label for="telephone">Phone Number*</label>
+        <input type="telephone" name="telephone" id="telephone" placeholder="(555) 555-5555" required>
       </div>
-      <div id="availability" style="display:none;">
+      <div id="availability">
         <h2>When are you available to participate?</h2>
-        <input type="checkbox" name="availabilityTime" value="Weekends" id="weekends">
-        <label for="weekends">Weekends</label>
-        <input type="checkbox" name="availabilityTime" value="Weekday evenings" id="evenings">
-        <label for="evenings">Weekday evenings</label>
+        <div style="display:flex;">
+          <input type="checkbox" name="availabilityTime" value="Weekends" id="weekends" onChange="yesAnswer('submit-form-button')" required>
+          <label for="weekends">Weekends</label>
+        </div>
+        <div style="display:flex;">
+          <input type="checkbox" name="availabilityTime" value="Weekday evenings" id="evenings" onChange="yesAnswer('submit-form-button')" required>
+          <label for="evenings">Weekday evenings</label>
+        </div>
       </div>
-      <input type="hidden" name="_subject" id="email-subject" value="Complaint Form Submission">
+      </div>
+      <input type="hidden" name="_subject" id="email-subject" value="Rumbo Recruitment Form Submission">
     </fieldset>
-    <input type="submit" value="File Complaint" style="display:none;">
-  </form><style>/* reset */
+    <input id="submit-form-button" type="submit" value="Submit" style="display:none; margin-top: 1rem;">
+  </form>
+  <div id="no-thanks" style="display:none;">
+    <h2>Thank you for your time!</h2>
+  </div>
+  <style>/* reset */
   #fs-frm input,
   #fs-frm select,
   #fs-frm textarea,
@@ -104,7 +114,6 @@ sitemap: false
   #fs-frm legend,
   #fs-frm ::placeholder {
     font-size: .825rem;
-    margin-bottom: .5rem;
     padding-top: .2rem;
     display: flex;
     align-items: baseline;
@@ -194,10 +203,17 @@ sitemap: false
   </style>
 
 <script>
-document.getElementById("spanishYes").addEventListener("change", spanishYes);
-var spanishValue = document.querySelector('input[name="spanish"]:checked');
-function spanishYes() {document.querySelector('input[name="spanish"]:checked').spanishValue;
+function yesAnswer(selector) {
+  var element = document.getElementById(selector);
+  element.style.display = 'block';
 }
-console.log(spanishValue);
+
+function noAnswer() {
+  var formElement = document.getElementById('fs-frm');
+  formElement.style.display = 'none';
+
+  var noThanksElement = document.getElementById('no-thanks');
+  noThanksElement.style.display = 'block';
+}
 
 </script>
