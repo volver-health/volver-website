@@ -14,7 +14,7 @@ footer:
     url: "/security/"
     weight: 1
   - name: "Careers"
-    url: "/careets/"
+    url: "/careers/"
     weight: 3
   - name: "Our Story"
     url: "/our-story/"

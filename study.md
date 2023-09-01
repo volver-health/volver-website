@@ -1,5 +1,5 @@
 ---
-title: Clinical Trial Recruitment
+title: Study Recruitment
 layout: page
 description: Go here to sign up for one of our clinical trials
 intro_image: "images/illustrations/reading.svg"
