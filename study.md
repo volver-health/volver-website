@@ -23,8 +23,8 @@ sitemap: false
           </div>
         </div>
       </div>
-    <div id="spanishPrimary">
-        <h2>Is Spanish your primary language?</h2>
+    <div id="spanishPrimary" style="display:none;">
+        <h2>Is Spanish your primary language? ¿Es el español su primer idioma?</h2>
         <div class="radio-row">
           <div class="radio">
             <input type="radio" id="spanishPrimaryYes" name="spanishPrimary" value="YES" onChange="spanishLabels()">
@@ -94,7 +94,7 @@ sitemap: false
     <input id="submit-form-button" type="submit" value="Submit" style="display:none; margin-top: 1rem;">
   </form>
   <div id="no-thanks" style="display:none;">
-    <h2>Thank you for your time -- unfortunately, we're looking for somebody else!</h2>
+    <h2 id="nothanks-label">Thank you for your time -- unfortunately, we're looking for somebody else!</h2>
   </div>
 
 
@@ -215,11 +215,11 @@ sitemap: false
 var labelStrings = {
   smartphone: {
     english: 'Do you have a smartphone?',
-    spanish: '¿Tiene un teléfono inteligente?'
+    spanish: '¿Tiene un smartphone?'
   },
   recovery: {
     english: 'Are you or a loved one in recovery for substance use or mental health?',
-    spanish: '¿Usted o un ser querido está en recuperación por el uso de sustancias o la salud mental?'
+    spanish: '¿Usted o alguien querido está en recuperación por el uso de sustancias o la salud mental?'
   },
   help: {
     english: 'Interested in helping us improve access to behavioral health services?',
@@ -227,7 +227,7 @@ var labelStrings = {
   },
   name: {
     english: 'First Name*',
-    spanish: 'Nombre*'
+    spanish: 'Primer nombre*'
   },
   phone: {
     english: 'Phone Number*',
@@ -236,6 +236,10 @@ var labelStrings = {
   availability: {
     english: 'When is a good time to contact you?*',
     spanish: '¿Cuándo es un buen momento para contactarlo?*'
+  },
+  nothanks: {
+    english: 'Thank you for your time -- unfortunately, we\'re looking for somebody else!',
+    spanish: '¡Gracias por su tiempo, pero estamos buscando a otra persona!'
   }
 }
 
