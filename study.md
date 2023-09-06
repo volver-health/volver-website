@@ -27,7 +27,7 @@ sitemap: false
         <h2>Is Spanish your primary language?</h2>
         <div class="radio-row">
           <div class="radio">
-            <input type="radio" id="spanishPrimaryYes" name="spanishPrimary" value="YES" onChange="yesAnswer('smartphone')">
+            <input type="radio" id="spanishPrimaryYes" name="spanishPrimary" value="YES" onChange="spanishLabels()">
             <label for="yes">Yes / Sí</label><br>
           </div>
           <div class="radio">
@@ -37,7 +37,7 @@ sitemap: false
         </div>
       </div>
     <div id="smartphone" style="display:none;">
-        <h2>Do you have a smartphone?</h2>
+        <h2 id="smartphone-label">Do you have a smartphone?</h2>
         <div class="radio-row">
           <div class="radio">
             <input type="radio" id="smartphoneYes" name="smartphone" value="YES" onChange="yesAnswer('recovery')">
@@ -50,7 +50,7 @@ sitemap: false
         </div>
       </div>
     <div id="recovery" style="display:none;">
-        <h2>Are you or a loved one in recovery for substance use or mental health?</h2>
+        <h2 id="recovery-label" >Are you or a loved one in recovery for substance use or mental health?</h2>
         <div class="radio-row">
           <div class="radio">
             <input type="radio" id="recoveryYes" name="recovery" value="YES" onChange="yesAnswer('help')">
@@ -63,7 +63,7 @@ sitemap: false
         </div>
       </div>
     <div id="help" style="display:none;">
-        <h2>Interested in helping us improve access to behavioral health services?</h2>
+        <h2 id="help-label">Interested in helping us improve access to behavioral health services?</h2>
         <div class="radio-row">
           <div class="radio">
             <input type="radio" id="helpYes" name="help" value="YES" onChange="yesAnswer('full_form')">
@@ -77,15 +77,15 @@ sitemap: false
       </div>
       <div id="full_form" style="display:none;">
       <div id="name">
-        <label for="first">First Name*</label>
+        <label for="first" id="name-label">First Name*</label>
         <input type="text" name="name" id="first" placeholder="First name" required>
       </div>
       <div id="phone">
-        <label for="telephone">Phone Number*</label>
+        <label for="telephone" id="phone-label">Phone Number*</label>
         <input type="telephone" name="telephone" id="telephone" placeholder="(555) 555-5555" required>
       </div>
       <div id="availability">
-        <label for="contact">When is a good time to contact you?*</label>
+        <label for="contact" id="availability-label">When is a good time to contact you?*</label>
         <input type="text" name="contact" id="contact" placeholder="Monday evenings, for example" onchange="yesAnswer('submit-form-button')" required>
       </div>
       </div>
@@ -239,6 +239,8 @@ var labelStrings = {
   }
 }
 
+var speaksSpanish = false;
+
 function yesAnswer(selector) {
   var element = document.getElementById(selector);
   element.style.display = 'block';
@@ -252,20 +254,15 @@ function noAnswer() {
   noThanksElement.style.display = 'block';
 }
 
-function spanishLabels(speakSpanish,label) {
-  if (speakSpanish == 'YES') {
-    var element = document.getElementById(label);
-    element.innerHTML = '¿Es el español su idioma principal?';
-  } else {
-    var element = document.getElementById(label);
-    element.innerHTML = 'Is Spanish your primary language?';
+function spanishLabels() {
+  // handle translations
+  for (var label in labelStrings) {
+    document.getElementById(label + '-label').innerHTML = labelStrings[label]['spanish'];
   }
-
+  
+  // show element
   var element = document.getElementById('smartphone');
   element.style.display = 'block';
-
-
-
 }
 
 </script>
