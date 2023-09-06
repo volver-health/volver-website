@@ -11,14 +11,27 @@ sitemap: false
 <form id="fs-frm" name="complaint-form" accept-charset="utf-8" action="https://formspree.io/f/mrgwkbjp" method="post">
     <fieldset id="fs-frm-inputs">
     <div id="spanish">
-        <h2>Do you speak Spanish?</h2>
+        <h2>Do you speak Spanish? ¿Hablas español?</h2>
         <div class="radio-row">
           <div class="radio">
-            <input type="radio" id="spanishYes" name="spanish" value="YES" onChange="yesAnswer('smartphone')">
-            <label for="yes">Yes</label><br>
+            <input type="radio" id="spanishYes" name="spanish" value="YES" onChange="yesAnswer('spanishPrimary')">
+            <label for="yes">Yes / Sí</label><br>
           </div>
           <div class="radio">
             <input type="radio" id="spanishNo" name="spanish" value="NO" onChange="noAnswer()">
+            <label for="no">No</label><br>
+          </div>
+        </div>
+      </div>
+    <div id="spanishPrimary">
+        <h2>Is Spanish your primary language?</h2>
+        <div class="radio-row">
+          <div class="radio">
+            <input type="radio" id="spanishPrimaryYes" name="spanishPrimary" value="YES" onChange="yesAnswer('smartphone')">
+            <label for="yes">Yes / Sí</label><br>
+          </div>
+          <div class="radio">
+            <input type="radio" id="spanishPrimaryNo" name="spanishPrimary" value="NO" onChange="yesAnswer('smartphone')">
             <label for="no">No</label><br>
           </div>
         </div>
@@ -72,15 +85,8 @@ sitemap: false
         <input type="telephone" name="telephone" id="telephone" placeholder="(555) 555-5555" required>
       </div>
       <div id="availability">
-        <h2>When are you available to participate?</h2>
-        <div style="display:flex;">
-          <input type="checkbox" name="availabilityTime" value="Weekends" id="weekends" onChange="yesAnswer('submit-form-button')" required>
-          <label for="weekends">Weekends</label>
-        </div>
-        <div style="display:flex;">
-          <input type="checkbox" name="availabilityTime" value="Weekday evenings" id="evenings" onChange="yesAnswer('submit-form-button')" required>
-          <label for="evenings">Weekday evenings</label>
-        </div>
+        <label for="contact">When is a good time to contact you?*</label>
+        <input type="text" name="contact" id="contact" placeholder="Monday evenings, for example" onchange="yesAnswer('submit-form-button')" required>
       </div>
       </div>
       <input type="hidden" name="_subject" id="email-subject" value="Rumbo Recruitment Form Submission">
@@ -88,8 +94,10 @@ sitemap: false
     <input id="submit-form-button" type="submit" value="Submit" style="display:none; margin-top: 1rem;">
   </form>
   <div id="no-thanks" style="display:none;">
-    <h2>Thank you for your time!</h2>
+    <h2>Thank you for your time -- unfortunately, we're looking for somebody else!</h2>
   </div>
+
+
   <style>/* reset */
   #fs-frm input,
   #fs-frm select,
@@ -203,6 +211,34 @@ sitemap: false
   </style>
 
 <script>
+
+var labelStrings = {
+  smartphone: {
+    english: 'Do you have a smartphone?',
+    spanish: '¿Tiene un teléfono inteligente?'
+  },
+  recovery: {
+    english: 'Are you or a loved one in recovery for substance use or mental health?',
+    spanish: '¿Usted o un ser querido está en recuperación por el uso de sustancias o la salud mental?'
+  },
+  help: {
+    english: 'Interested in helping us improve access to behavioral health services?',
+    spanish: '¿Está interesado en ayudarnos a mejorar el acceso a los servicios de salud conductual?'
+  },
+  name: {
+    english: 'First Name*',
+    spanish: 'Nombre*'
+  },
+  phone: {
+    english: 'Phone Number*',
+    spanish: 'Número de teléfono*'
+  },
+  availability: {
+    english: 'When is a good time to contact you?*',
+    spanish: '¿Cuándo es un buen momento para contactarlo?*'
+  }
+}
+
 function yesAnswer(selector) {
   var element = document.getElementById(selector);
   element.style.display = 'block';
@@ -214,6 +250,22 @@ function noAnswer() {
 
   var noThanksElement = document.getElementById('no-thanks');
   noThanksElement.style.display = 'block';
+}
+
+function spanishLabels(speakSpanish,label) {
+  if (speakSpanish == 'YES') {
+    var element = document.getElementById(label);
+    element.innerHTML = '¿Es el español su idioma principal?';
+  } else {
+    var element = document.getElementById(label);
+    element.innerHTML = 'Is Spanish your primary language?';
+  }
+
+  var element = document.getElementById('smartphone');
+  element.style.display = 'block';
+
+
+
 }
 
 </script>
