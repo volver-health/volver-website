@@ -86,7 +86,7 @@ sitemap: false
       </div>
       <div id="availability">
         <label for="contact" id="availability-label">When is a good time to contact you?*</label>
-        <input type="text" name="contact" id="contact" placeholder="Monday evenings, for example" onchange="yesAnswer('submit-form-button')" required>
+        <input type="text" name="contact" id="contact" placeholder="Monday evenings, for example" required>
       </div>
       </div>
       <input type="hidden" name="_subject" id="email-subject" value="Rumbo Recruitment Form Submission">
@@ -268,5 +268,11 @@ function spanishLabels() {
   var element = document.getElementById('smartphone');
   element.style.display = 'block';
 }
+
+var contactElement = document.getElementById('contact');
+contactElement. addEventListener("input", (event) => {
+  var submit = document.getElementById('submit-form-button');
+  submit.style.display = 'block';
+});
 
 </script>
