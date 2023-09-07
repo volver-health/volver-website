@@ -21,6 +21,3 @@ Thumbs.db
 .Spotlight-V100
 .Trashes
 .idea
-
-# Secrets
-_data/secrets.yml
