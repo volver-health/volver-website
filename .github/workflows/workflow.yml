@@ -10,7 +10,7 @@ jobs:
 
     - name: Purge cache
       uses: jakejarvis/cloudflare-purge-action@master
-      env:
+      secrets:
         # Zone is required by both authentication methods
         CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
         CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
