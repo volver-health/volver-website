@@ -4,6 +4,7 @@ on: push
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: github-pages
     steps:
 
     # Put steps here to build your site, deploy it to a service, etc.
@@ -12,10 +13,6 @@ jobs:
       uses: jakejarvis/cloudflare-purge-action@master
       env:
         # Zone is required by both authentication methods
-        CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
-        CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
-        CLOUDFLARE_KEY: ${{ secrets.CLOUDFLARE_KEY }}
-      with:
         CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
         CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
         CLOUDFLARE_KEY: ${{ secrets.CLOUDFLARE_KEY }}
