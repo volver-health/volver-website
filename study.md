@@ -9,76 +9,89 @@ sitemap: false
 ---
 
 <form id="fs-frm" name="complaint-form" accept-charset="utf-8" action="https://formspree.io/f/mrgwkbjp" method="post">
-    <fieldset id="fs-frm-inputs">
-    <div id="spanish">
-        <h2>Do you speak Spanish? ¿Hablas español?</h2>
-        <div class="radio-row">
-          <div class="radio">
-            <input type="radio" id="spanishYes" name="spanish" value="YES" onChange="yesAnswer('spanishPrimary')">
-            <label for="yes">Yes / Sí</label><br>
-          </div>
-          <div class="radio">
-            <input type="radio" id="spanishNo" name="spanish" value="NO" onChange="noAnswer()">
-            <label for="no">No</label><br>
-          </div>
+  <fieldset id="fs-frm-inputs">
+    <div id="recovery">
+      <h2>Are you or a loved one in recovery for substance use or mental health? ¿Usted o alguien querido está en recuperación por el uso de sustancias o la salud mental?</h2>
+      <div class="radio-row">
+        <div class="radio">
+          <input type="radio" id="recoveryYes" name="recovery" value="YES" onChange="yesAnswer('spanish')">
+          <label for="yes">Yes</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" id="recoveryNo" name="recovery" value="NO" onChange="noAnswer()">
+          <label for="no">No</label><br>
         </div>
       </div>
+    </div>
+    <div id="spanish" style="display:none;">
+      <h2 id="spanish-label">Does that person speak Spanish? ¿Esa persona habla español?</h2>
+      <div class="radio-row">
+        <div class="radio">
+          <input type="radio" id="spanishYes" name="spanish" value="YES" onChange="yesAnswer('spanishPrimary')">
+          <label for="yes">Yes / Sí</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" id="spanishNo" name="spanish" value="NO" onChange="noAnswer()">
+          <label for="no">No</label><br>
+        </div>
+      </div>
+    </div>
     <div id="spanishPrimary" style="display:none;">
-        <h2>Is Spanish your primary language? ¿Es el español su primer idioma?</h2>
-        <div class="radio-row">
-          <div class="radio">
-            <input type="radio" id="spanishPrimaryYes" name="spanishPrimary" value="YES" onChange="spanishLabels()">
-            <label for="yes">Yes / Sí</label><br>
-          </div>
-          <div class="radio">
-            <input type="radio" id="spanishPrimaryNo" name="spanishPrimary" value="NO" onChange="yesAnswer('smartphone')">
-            <label for="no">No</label><br>
-          </div>
+      <h2>Is Spanish your primary language? ¿Es el español su primer idioma?</h2>
+      <div class="radio-row">
+        <div class="radio">
+          <input type="radio" id="spanishPrimaryYes" name="spanishPrimary" value="YES" onChange="spanishLabels()">
+          <label for="yes">Yes / Sí</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" id="spanishPrimaryNo" name="spanishPrimary" value="NO" onChange="yesAnswer('adult')">
+          <label for="no">No</label><br>
         </div>
       </div>
+    </div>
+    <div id="adult" style="display:none;">
+      <h2 id="adult-label">Are you an adult over the age of 18?</h2>
+      <div class="radio-row">
+        <div class="radio">
+          <input type="radio" id="adultYes" name="adult" value="YES" onChange="yesAnswer('smartphone')">
+          <label for="yes">Yes / Sí</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" id="adultNo" name="adult" value="NO" onChange="noAnswer()">
+          <label for="no">No</label><br>
+        </div>
+      </div>
+    </div>
     <div id="smartphone" style="display:none;">
-        <h2 id="smartphone-label">Do you have a smartphone?</h2>
-        <div class="radio-row">
-          <div class="radio">
-            <input type="radio" id="smartphoneYes" name="smartphone" value="YES" onChange="yesAnswer('recovery')">
-            <label for="yes">Yes</label><br>
-          </div>
-          <div class="radio">
-            <input type="radio" id="smartphoneNo" name="smartphone" value="NO" onChange="noAnswer()">
-            <label for="no">No</label><br>
-          </div>
+      <h2 id="smartphone-label">Do you have a smartphone?</h2>
+      <div class="radio-row">
+        <div class="radio">
+          <input type="radio" id="smartphoneYes" name="smartphone" value="YES" onChange="yesAnswer('help')">
+          <label for="yes">Yes</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" id="smartphoneNo" name="smartphone" value="NO" onChange="noAnswer()">
+          <label for="no">No</label><br>
         </div>
       </div>
-    <div id="recovery" style="display:none;">
-        <h2 id="recovery-label" >Are you or a loved one in recovery for substance use or mental health?</h2>
-        <div class="radio-row">
-          <div class="radio">
-            <input type="radio" id="recoveryYes" name="recovery" value="YES" onChange="yesAnswer('help')">
-            <label for="yes">Yes</label><br>
-          </div>
-          <div class="radio">
-            <input type="radio" id="recoveryNo" name="recovery" value="NO" onChange="noAnswer()">
-            <label for="no">No</label><br>
-          </div>
-        </div>
-      </div>
+    </div>
     <div id="help" style="display:none;">
-        <h2 id="help-label">Interested in helping us improve access to behavioral health services?</h2>
-        <div class="radio-row">
-          <div class="radio">
-            <input type="radio" id="helpYes" name="help" value="YES" onChange="yesAnswer('full_form')">
-            <label for="yes">Yes</label><br>
-          </div>
-          <div class="radio">
-            <input type="radio" id="helpNo" name="help" value="NO" onChange="noAnswer()">
-            <label for="no">No</label><br>
-          </div>
+      <h2 id="help-label">Interested in helping us improve access to behavioral health services?</h2>
+      <div class="radio-row">
+        <div class="radio">
+          <input type="radio" id="helpYes" name="help" value="YES" onChange="yesAnswer('full_form')">
+          <label for="yes">Yes</label><br>
+        </div>
+        <div class="radio">
+          <input type="radio" id="helpNo" name="help" value="NO" onChange="noAnswer()">
+          <label for="no">No</label><br>
         </div>
       </div>
-      <div id="full_form" style="display:none;">
+    </div>
+    <div id="full_form" style="display:none;">
       <div id="name">
         <label for="first" id="name-label">First Name*</label>
-        <input type="text" name="name" id="first" placeholder="First name" required>
+        <input type="text" name="name" id="first" placeholder="First name / Primer nombre" required>
       </div>
       <div id="phone">
         <label for="telephone" id="phone-label">Phone Number*</label>
@@ -86,17 +99,16 @@ sitemap: false
       </div>
       <div id="availability">
         <label for="contact" id="availability-label">When is a good time to contact you?*</label>
-        <input type="text" name="contact" id="contact" placeholder="Monday evenings, for example" required>
+        <input type="text" name="contact" id="contact" placeholder="Monday evenings, for example / Los lunes por la tarde, por ejemplo." required>
       </div>
-      </div>
-      <input type="hidden" name="_subject" id="email-subject" value="Rumbo Recruitment Form Submission">
-    </fieldset>
-    <input id="submit-form-button" type="submit" value="Submit" style="display:none; margin-top: 1rem;">
-  </form>
-  <div id="no-thanks" style="display:none;">
-    <h2 id="nothanks-label">Thank you for your time -- unfortunately, we're looking for somebody else!</h2>
-  </div>
-
+    </div>
+    <input type="hidden" name="_subject" id="email-subject" value="Rumbo Recruitment Form Submission">
+  </fieldset>
+  <input id="submit-form-button" type="submit" value="Submit / Enviar" style="display:none; margin-top: 1rem;">
+</form>
+<div id="no-thanks" style="display:none;">
+  <h2 id="nothanks-label">Thank you for your time -- unfortunately, we're looking for somebody else!</h2>
+</div>
 
   <style>/* reset */
   #fs-frm input,
@@ -217,9 +229,9 @@ var labelStrings = {
     english: 'Do you have a smartphone?',
     spanish: '¿Tiene un smartphone?'
   },
-  recovery: {
-    english: 'Are you or a loved one in recovery for substance use or mental health?',
-    spanish: '¿Usted o alguien querido está en recuperación por el uso de sustancias o la salud mental?'
+  adult: {
+    english: 'Are you an adult over the age of 18?',
+    spanish: '¿Eres adulto mayor de 18 años?'
   },
   help: {
     english: 'Interested in helping us improve access to behavioral health services?',
@@ -265,7 +277,7 @@ function spanishLabels() {
   }
   
   // show element
-  var element = document.getElementById('smartphone');
+  var element = document.getElementById('adult');
   element.style.display = 'block';
 }
 
