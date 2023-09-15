@@ -8,7 +8,7 @@ shrinkIntro: true
 
 # At Volver Health, we’re on a mission.
 
-For Hispanics and Latinx folks in the United States, the significant barriers to accessing, and low engagement with, substance abuse treatment and recovery resources is shameful.
+For Hispanics and Latinx folks in the United States, the significant barriers to accessing, and low engagement with, substance abuse treatment and recovery resources is unacceptable.
 
 This unmet need constitutes a damaging and hidden burden on the health and well-being of an estimated 30 million people.
 
