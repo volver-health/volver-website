@@ -37,7 +37,7 @@ sitemap: false
       </div>
     </div>
     <div id="spanishPrimary" style="display:none;">
-      <h2>Is Spanish your primary language? ¿Es el español su primer idioma?</h2>
+      <h2>Do you read better in Spanish? ¿Lees mejor en español?</h2>
       <div class="radio-row">
         <div class="radio">
           <input type="radio" id="spanishPrimaryYes" name="spanishPrimary" value="YES" onChange="spanishLabels()">
@@ -235,7 +235,7 @@ var labelStrings = {
   },
   help: {
     english: 'Interested in helping us improve access to behavioral health services?',
-    spanish: '¿Está interesado en ayudarnos a mejorar el acceso a los servicios de salud conductual?'
+    spanish: '¿Está interesado en ayudarnos a mejorar el acceso a los servicios de salud mental y tratamiento de adicciones?'
   },
   name: {
     english: 'First Name*',
