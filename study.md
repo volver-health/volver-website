@@ -1,7 +1,7 @@
 ---
 title: Study Recruitment
 layout: page
-description: Go here to sign up for one of our clinical trials
+description: Go here to sign up for one of our studies
 intro_image: "images/illustrations/reading.svg"
 intro_image_absolute: true
 intro_image_hide_on_mobile: true
