@@ -1,7 +1,7 @@
-baseurl: '/'
+baseurl: ''
 permalink: pretty
 title: 'Volver Health'
-url: "https://volver.health"
+url: 'https://volver.health'
 
 logo:
   mobile: "images/logo/logo-new.png"
