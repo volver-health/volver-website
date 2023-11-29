@@ -11,7 +11,7 @@ sitemap: false
 <form id="fs-frm" name="complaint-form" accept-charset="utf-8" action="https://formspree.io/f/mrgwkbjp" method="post">
   <fieldset id="fs-frm-inputs">
     <div id="recovery">
-      <h2>Are you or a loved one in recovery for substance use or mental health? ¿Usted o alguien querido está en recuperación por el uso de sustancias o la salud mental?</h2>
+      <h2>Have you or a loved one ever looked for help for substance use or mental health issues? ¿Usted o alguien querido ha buscado ayuda por el uso de sustancias o problemas de salud mental?</h2>
       <div class="radio-row">
         <div class="radio">
           <input type="radio" id="recoveryYes" name="recovery" value="YES" onChange="yesAnswer('spanish')">
@@ -90,7 +90,7 @@ sitemap: false
     </div>
     <div id="full_form" style="display:none;">
       <div id="name">
-        <label for="first" id="name-label">First Name*</label>
+        <label for="first" id="name-label">First name*</label>
         <input type="text" name="name" id="first" placeholder="First name / Primer nombre" required>
       </div>
       <div id="phone">
@@ -100,6 +100,10 @@ sitemap: false
       <div id="availability">
         <label for="contact" id="availability-label">When is a good time to contact you?*</label>
         <input type="text" name="contact" id="contact" placeholder="Monday evenings, for example / Los lunes por la tarde, por ejemplo." required>
+      </div>
+      <div id="bonus">
+        <label for="bonus" id="bonus-label">Please recommend anyone else you know who might be interested</label>
+        <input type="text" name="bonus" id="bonus" placeholder="First name + phone number / Primer nombre + Número de teléfono" required>
       </div>
     </div>
     <input type="hidden" name="_subject" id="email-subject" value="Rumbo Recruitment Form Submission">
@@ -248,6 +252,10 @@ var labelStrings = {
   availability: {
     english: 'When is a good time to contact you?*',
     spanish: '¿Cuándo es un buen momento para contactarlo?*'
+  },
+  bonus: {
+    english: 'Please recommend anyone else you know who might be interested',
+    spanish: 'Por favor recomienda a alguien más que conozcas que pueda estar interesado'
   },
   nothanks: {
     english: 'Thank you for your time -- unfortunately, we\'re looking for somebody else!',
