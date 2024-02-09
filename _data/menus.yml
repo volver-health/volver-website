@@ -19,9 +19,6 @@ footer:
   - name: "Our Story"
     url: "/our-story/"
     weight: 5
-  - name: "Privacy Policy"
-    url: "/privacy-policy/"
+  - name: "Rumbo Privacy Policy"
+    url: "/rumbo-privacy-policy/"
     weight: 2
-  - name: "Rumbo API"
-    url: "/rumbo-api/"
-    weight: 4
