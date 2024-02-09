@@ -52,7 +52,7 @@ intro_image_hide_on_mobile: true
 <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
 </li>
 </ul>
-<h2>Collecting and Using Your Personal Data</h2>
+<h2>Collecting and Using Your Data</h2>
 <h3>Types of Data Collected</h3>
 <h4>Usage Data</h4>
 <p>Usage Data is collected automatically when using the Service.</p>
