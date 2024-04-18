@@ -2,7 +2,7 @@
 title: Volver Health
 layout: home
 description: Reducing health care disparities for the Latinx community.
-intro_image: "images/illustrations/brain-transparent.png"
+intro_image: "images/people.jpg"
 intro_image_absolute: true
 intro_image_hide_on_mobile: true
 show_call_box: false
